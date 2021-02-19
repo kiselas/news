@@ -34,10 +34,14 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
-    'accounts',
 
+    # 3rd Party
+    'crispy_forms',
+
+    # Local
+    'accounts',
+    'pages',
 ]
 
 MIDDLEWARE = [
@@ -127,4 +131,15 @@ STATICFILES_DIRS = []   # оставляем пустым при использ�
 STATIC_ROOT = STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 STATICFILES_STORAGE =\
         'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+DEFAULT_FROM_EMAIL = 'kisel.nf97@gmail.com'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
