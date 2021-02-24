@@ -121,7 +121,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
@@ -129,7 +128,7 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = []   # оставляем пустым при использовании staticfiles_storage
+STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]   # оставляем пустым при использовании staticfiles_storage
 STATIC_ROOT = STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 STATICFILES_STORAGE =\
         'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -141,7 +140,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'kisel.nf97@gmail.com'
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
+EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
