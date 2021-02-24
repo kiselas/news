@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'accounts',
     'pages',
     'articles',
+    'social_app,'
 
     # social providers
     "allauth.socialaccount.providers.vk",
