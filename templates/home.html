@@ -1,14 +1,44 @@
 {% extends 'base.html' %}
 
 {% block title %}Home{% endblock title %}
-
+{% load static %}
 {% block content %}
-<br/>
-<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
-    <div class="col-md-6 px-0">
-      <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
-      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-      <p class="lead mb-0"><a href="{% url 'article_list' %}" class="text-white font-weight-bold">View all articles</a></p>
+<div class="container-bg">
+    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+        <div class="col-md-6 px-0">
+          <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
+          <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+          <p class="lead mb-0"><a href="{% url 'article_list' %}" class="text-white font-weight-bold">View all articles</a></p>
+        </div>
     </div>
+</div>
+<div class="card-group">
+<div class="card mx-2" style="width: 18rem;">
+  <img src="{% static 'images/2.jpeg' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  <a href="#">
+        <button class="btn btn-dark btn-sm">Читать полностью</button>
+    </a>
+  </div>
+</div>
+<div class="card mx-2" style="width: 18rem;">
+  <img src="{% static 'images/3.jpeg' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#">
+        <button class="btn btn-dark btn-sm">Читать полностью</button>
+    </a>
+  </div>
+</div>
+<div class="card mx-2" style="width: 18rem;">
+  <img src="{% static 'images/4.jpeg' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  <a href="#">
+        <button class="btn btn-dark btn-sm">Читать полностью</button>
+    </a>
+  </div>
+</div>
 </div>
 {% endblock content %}

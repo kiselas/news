@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Article, Comment
+from .models import Article, Comment, Category
 
 
 class CommentInline(admin.TabularInline):
@@ -14,3 +14,4 @@ class ArticleAdmin(admin.ModelAdmin):
 
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Comment)
+admin.site.register(Category)
