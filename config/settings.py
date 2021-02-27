@@ -43,12 +43,17 @@ INSTALLED_APPS = [
 
     # 3rd Party
     'crispy_forms',
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
 
 
     # Local
     'accounts',
     'pages',
     'articles',
+    "allauth.socialaccount.providers.github",
+    "allauth.socialaccount.providers.twitter",
 ]
 
 MIDDLEWARE = [
@@ -146,3 +151,12 @@ EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
+
+AUTHENTICATION_BACKENDS = (
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
+SITE_ID = 1
+ACCOUNT_EMAIL_VERIFICATION = "none"
+LOGIN_REDIRECT_URL = "home"
+ACCOUNT_LOGOUT_ON_GET = True
