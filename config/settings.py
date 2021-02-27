@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'pages',
     'articles',
     "allauth.socialaccount.providers.github",
-    "allauth.socialaccount.providers.twitter",
+    "allauth.socialaccount.providers.vk",
 ]
 
 MIDDLEWARE = [
